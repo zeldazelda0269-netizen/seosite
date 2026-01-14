@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naqeeb Dev | Premium Software Solutions & Digital Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        :root { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .glass-header {
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .page-section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 2px; bottom: -4px; left: 0;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        .service-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.6), rgba(2, 6, 23, 0.8));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="glass-header fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between h-20 items-center">
+            <div class="cursor-pointer flex items-center gap-2" onclick="showPage('services')">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg shadow-blue-500/20">N</div>
+                <span class="text-xl font-extrabold tracking-tighter uppercase">Naqeeb Dev</span>
+            </div>
+            
+            <nav class="hidden xl:flex items-center gap-8 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                <a href="javascript:void(0)" onclick="showPage('services')" class="nav-link hover:text-white">Services</a>
+                <a href="javascript:void(0)" onclick="showPage('why-us')" class="nav-link hover:text-white">Why Us</a>
+                <a href="javascript:void(0)" onclick="showPage('about')" class="nav-link hover:text-white">About</a>
+                <a href="javascript:void(0)" onclick="showPage('blogs')" class="nav-link hover:text-white">Blogs</a>
+                <a href="javascript:void(0)" onclick="showPage('faqs')" class="nav-link hover:text-white">FAQ</a>
+                <button onclick="window.open('https://wa.me/923254723041')" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-500 transition shadow-lg shadow-blue-500/20">Get In Touch</button>
+            </nav>
+
+            <button onclick="toggleMobile()" class="xl:hidden text-2xl text-slate-400"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-950 z-[60] hidden flex-col p-12 pt-24 gap-8 text-2xl font-black uppercase tracking-tighter">
+        <button onclick="toggleMobile()" class="absolute top-6 right-6 text-3xl">&times;</button>
+        <a onclick="showPage('services'); toggleMobile()">Services</a>
+        <a onclick="showPage('why-us'); toggleMobile()">Why Us</a>
+        <a onclick="showPage('about'); toggleMobile()">About</a>
+        <a onclick="showPage('blogs'); toggleMobile()">Blogs</a>
+        <a onclick="showPage('faqs'); toggleMobile()">FAQ</a>
+        <a onclick="window.open('https://wa.me/923254723041')" class="text-blue-500">Contact Now</a>
+    </div>
+
+    <main class="pt-20">
+        
+        <!-- SERVICES PAGE -->
+        <section id="services" class="page-section active py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <h1 class="text-5xl lg:text-7xl font-black mb-8">Our <span class="gradient-text">Core Capabilities</span></h1>
+                    <p class="text-slate-400 text-lg leading-relaxed">We deliver high-end digital solutions by combining deep technical expertise with business intelligence. We don't just build websites; we build revenue engines.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 mb-20">
+                    <!-- Full Stack -->
+                    <div class="service-card p-12 rounded-[40px]">
+                        <div class="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-3xl text-blue-500 mb-8"><i class="fas fa-code"></i></div>
+                        <h3 class="text-3xl font-black mb-6">Full Stack Development</h3>
+                        <p class="text-slate-400 mb-8">Architecting scalable SaaS platforms using the MERN stack. We focus on high-performance backends and interactive frontends that handle complex data logic seamlessly.</p>
+                        <ul class="space-y-4 text-sm font-semibold text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-blue-500"></i> Custom API Integrations & Webhooks</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-blue-500"></i> Real-time Database Management (MongoDB)</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-blue-500"></i> Next.js for SEO & Performance</li>
+                        </ul>
+                    </div>
+
+                    <!-- Shopify -->
+                    <div class="service-card p-12 rounded-[40px]">
+                        <div class="w-16 h-16 bg-emerald-600/10 rounded-2xl flex items-center justify-center text-3xl text-emerald-500 mb-8"><i class="fab fa-shopify"></i></div>
+                        <h3 class="text-3xl font-black mb-6">Shopify E-commerce</h3>
+                        <p class="text-slate-400 mb-8">Premium Shopify store builds focusing on Conversion Rate Optimization (CRO). From custom Liquid sections to complex app integrations, we maximize your online sales.</p>
+                        <ul class="space-y-4 text-sm font-semibold text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Shopify 2.0 Theme Customization</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Custom Product Filtering & Logic</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> One-Page Checkout Optimization</li>
+                        </ul>
+                    </div>
+
+                    <!-- WordPress -->
+                    <div class="service-card p-12 rounded-[40px]">
+                        <div class="w-16 h-16 bg-orange-600/10 rounded-2xl flex items-center justify-center text-3xl text-orange-500 mb-8"><i class="fab fa-wordpress"></i></div>
+                        <h3 class="text-3xl font-black mb-6">WordPress Development</h3>
+                        <p class="text-slate-400 mb-8">Enterprise-grade WordPress solutions using Elementor, Oxygen, or Gutenberg. We emphasize security, page speed, and easy-to-manage content structures.</p>
+                        <ul class="space-y-4 text-sm font-semibold text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-orange-500"></i> Dynamic Content with ACF/JetEngine</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-orange-500"></i> WooCommerce Advanced Scalability</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-orange-500"></i> Plugin Security & Speed Audits</li>
+                        </ul>
+                    </div>
+
+                    <!-- Wix -->
+                    <div class="service-card p-12 rounded-[40px]">
+                        <div class="w-16 h-16 bg-purple-600/10 rounded-2xl flex items-center justify-center text-3xl text-purple-500 mb-8"><i class="fab fa-wix"></i></div>
+                        <h3 class="text-3xl font-black mb-6">Wix Studio & Velo</h3>
+                        <p class="text-slate-400 mb-8">Utilizing Wix Studio and Velo (JavaScript) to create bespoke web applications on the Wix platform without the limitations of standard templates.</p>
+                        <ul class="space-y-4 text-sm font-semibold text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-purple-500"></i> Velo Custom Backend Logic</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-purple-500"></i> Multi-state CMS Design</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-purple-500"></i> Responsive Mobile-First Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY US PAGE -->
+        <section id="why-us" class="page-section py-24 px-6 bg-slate-900/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <h2 class="text-5xl lg:text-6xl font-black mb-12">The <span class="gradient-text">Naqeeb Dev</span> Advantage</h2>
+                        <div class="space-y-10">
+                            <div class="flex gap-6">
+                                <div class="shrink-0 w-12 h-12 rounded-full border border-blue-500 flex items-center justify-center text-blue-500 font-black">01</div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-3">Transparent Roadmap</h4>
+                                    <p class="text-slate-500 text-sm leading-relaxed">No black boxes. We provide detailed sprint reports and live staging links so you can track progress in real-time.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="shrink-0 w-12 h-12 rounded-full border border-purple-500 flex items-center justify-center text-purple-500 font-black">02</div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-3">High-Performance Code</h4>
+                                    <p class="text-slate-500 text-sm leading-relaxed">We optimize for Core Web Vitals from day one. Expect 90+ lighthouse scores and lightning-fast load times.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="shrink-0 w-12 h-12 rounded-full border border-emerald-500 flex items-center justify-center text-emerald-500 font-black">03</div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-3">Client-First Philosophy</h4>
+                                    <p class="text-slate-500 text-sm leading-relaxed">We don't just execute; we advise. If there's a more cost-effective or better tech route, we'll tell you.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative bg-slate-900 border border-slate-800 p-12 rounded-[50px] shadow-2xl">
+                        <div class="grid grid-cols-2 gap-8 text-center">
+                            <div><h3 class="text-5xl font-black text-blue-500 mb-2">98%</h3><p class="text-xs uppercase font-bold text-slate-500 tracking-widest">Client Retention</p></div>
+                            <div><h3 class="text-5xl font-black text-purple-500 mb-2">24h</h3><p class="text-xs uppercase font-bold text-slate-500 tracking-widest">Support Response</p></div>
+                            <div><h3 class="text-5xl font-black text-emerald-500 mb-2">150+</h3><p class="text-xs uppercase font-bold text-slate-500 tracking-widest">Global Launches</p></div>
+                            <div><h3 class="text-5xl font-black text-orange-500 mb-2">10M+</h3><p class="text-xs uppercase font-bold text-slate-500 tracking-widest">Revenue Generated</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about" class="page-section py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-20 items-center mb-32">
+                    <div class="space-y-8">
+                        <div class="inline-block px-4 py-1 rounded-full bg-blue-600/10 text-blue-500 font-bold text-xs uppercase tracking-widest">About Our Agency</div>
+                        <h2 class="text-5xl font-black">Innovating from Lahore to the Global Stage.</h2>
+                        <p class="text-slate-400 text-lg leading-relaxed">Founded by Naqeeb Ur Rehman, our agency was built on the principle that premium software development should be accessible without the overhead costs of traditional giant agencies.</p>
+                        <p class="text-slate-400 text-lg leading-relaxed">We have spent 4+ years refining our workflow, adopting the latest technologies, and building a team of specialists who care as much about your ROI as you do.</p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522071823991-b1ae5e6a3048?auto=format&fit=crop&q=80&w=1200" class="rounded-[60px] shadow-2xl grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                </div>
+
+                <!-- TEAM SUB-SECTION -->
+                <div class="pt-24 border-t border-slate-900">
+                    <div class="text-center mb-16">
+                        <h3 class="text-4xl font-black mb-4">Meet Our Teams</h3>
+                        <p class="text-slate-500 uppercase tracking-widest font-bold text-xs">The Minds Behind Your Success</p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="text-center group">
+                            <div class="aspect-square rounded-[40px] overflow-hidden mb-6 bg-slate-900 border border-slate-800">
+                                <img src="https://i.pravatar.cc/300?img=11" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+                            </div>
+                            <h4 class="text-xl font-bold">Naqeeb Ur Rehman</h4>
+                            <p class="text-blue-500 text-xs font-bold uppercase tracking-widest mt-1">Founder & Lead Architect</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="aspect-square rounded-[40px] overflow-hidden mb-6 bg-slate-900 border border-slate-800">
+                                <img src="https://i.pravatar.cc/300?img=33" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+                            </div>
+                            <h4 class="text-xl font-bold">Hamza Khan</h4>
+                            <p class="text-blue-500 text-xs font-bold uppercase tracking-widest mt-1">Full Stack Lead</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="aspect-square rounded-[40px] overflow-hidden mb-6 bg-slate-900 border border-slate-800">
+                                <img src="https://i.pravatar.cc/300?img=26" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+                            </div>
+                            <h4 class="text-xl font-bold">Ayesha Siddiqui</h4>
+                            <p class="text-blue-500 text-xs font-bold uppercase tracking-widest mt-1">UI/UX Strategist</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="aspect-square rounded-[40px] overflow-hidden mb-6 bg-slate-900 border border-slate-800">
+                                <img src="https://i.pravatar.cc/300?img=44" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+                            </div>
+                            <h4 class="text-xl font-bold">Bilal Ahmed</h4>
+                            <p class="text-blue-500 text-xs font-bold uppercase tracking-widest mt-1">E-commerce Specialist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOGS PAGE -->
+        <section id="blogs" class="page-section py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+                    <h2 class="text-5xl font-black">Digital <span class="gradient-text">Insights</span></h2>
+                    <div class="flex gap-4">
+                        <button class="px-6 py-2 bg-slate-800 rounded-full text-xs font-bold hover:bg-slate-700 transition">Latest</button>
+                        <button class="px-6 py-2 bg-slate-900 rounded-full text-xs font-bold hover:bg-slate-800 transition">Development</button>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="group cursor-pointer">
+                        <div class="aspect-video rounded-3xl overflow-hidden mb-6 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition group-hover:scale-105">
+                        </div>
+                        <p class="text-blue-500 text-xs font-bold uppercase tracking-widest mb-2">Tech Trends</p>
+                        <h3 class="text-2xl font-bold mb-4">Why Serverless Architecture is the Future of SaaS</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Exploring how lambda functions and cloud computing are reducing costs for startup founders...</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/100?img=11" class="w-8 h-8 rounded-full">
+                            <span class="text-xs text-slate-400">Naqeeb • 5 Min Read</span>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="aspect-video rounded-3xl overflow-hidden mb-6 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition group-hover:scale-105">
+                        </div>
+                        <p class="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-2">E-commerce</p>
+                        <h3 class="text-2xl font-bold mb-4">Scaling Shopify: From $0 to $1M in 12 Months</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">A strategic look into backend optimizations that support high-volume flash sales...</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/100?img=33" class="w-8 h-8 rounded-full">
+                            <span class="text-xs text-slate-400">Hamza • 8 Min Read</span>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="aspect-video rounded-3xl overflow-hidden mb-6 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition group-hover:scale-105">
+                        </div>
+                        <p class="text-purple-500 text-xs font-bold uppercase tracking-widest mb-2">Agency Life</p>
+                        <h3 class="text-2xl font-bold mb-4">Bridging the Gap: Remote Development Success</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">How we manage complex projects across 5 different timezones with 100% accuracy...</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/100?img=26" class="w-8 h-8 rounded-full">
+                            <span class="text-xs text-slate-400">Ayesha • 4 Min Read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ PAGE -->
+        <section id="faqs" class="page-section py-24 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl font-black mb-4">Questions? We Have <span class="gradient-text">Answers.</span></h2>
+                    <p class="text-slate-500 font-bold uppercase tracking-widest text-xs">Clarifying Your Project Concerns</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl">
+                        <h4 class="text-xl font-bold mb-4">Do you provide source code ownership?</h4>
+                        <p class="text-slate-400 leading-relaxed text-sm">Yes. Once final payment is made, you own 100% of the intellectual property. We hand over all GitHub repositories, Figma files, and deployment keys.</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl">
+                        <h4 class="text-xl font-bold mb-4">What happens after the project is launched?</h4>
+                        <p class="text-slate-400 leading-relaxed text-sm">We provide a 30-day post-launch warranty period for bug fixes. Following that, we offer monthly maintenance retainers for continuous updates and security.</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl">
+                        <h4 class="text-xl font-bold mb-4">How do you handle project communication?</h4>
+                        <p class="text-slate-400 leading-relaxed text-sm">We use a dedicated Slack channel or WhatsApp group for daily communication. We also have weekly video calls via Zoom/Google Meet to demonstrate sprint progress.</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl">
+                        <h4 class="text-xl font-bold mb-4">Which platform is best for my business?</h4>
+                        <p class="text-slate-400 leading-relaxed text-sm">It depends on your scale. Shopify is best for retail; WordPress is best for content-rich SEO sites; Custom MERN stack is best for unique SaaS business logic.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIVACY POLICY PAGE -->
+        <section id="privacy" class="page-section py-24 px-6">
+            <div class="max-w-4xl mx-auto bg-slate-950 border border-slate-900 p-12 rounded-[50px]">
+                <h2 class="text-4xl font-black mb-10 border-b border-slate-900 pb-6">Privacy Policy</h2>
+                <div class="space-y-8 text-slate-400 text-sm leading-relaxed">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">1. Information Collection</h3>
+                        <p>We collect information such as your name, email, and phone number only when you contact us via WhatsApp or email. This data is used solely for the purpose of consulting on your project.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">2. Data Usage</h3>
+                        <p>Your data is never sold or shared with third parties. It is stored securely on our internal CRM to maintain project records and provide future customer support.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">3. Cookies</h3>
+                        <p>Our website uses basic analytics cookies to understand how visitors interact with our content. You can disable these via your browser settings.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">4. Compliance</h3>
+                        <p>We adhere to international data protection standards (GDPR/CCPA) for our global clients. You may request your data to be deleted at any time by emailing us at naqeeburrehman001@gmail.com.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Unified Footer -->
+    <footer class="bg-slate-950 pt-24 pb-12 border-t border-slate-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-16 mb-20">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-black">N</div>
+                        <span class="text-xl font-black tracking-tighter uppercase">Naqeeb Dev</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">Premium software development agency specializing in scalable web solutions. Engineered in Lahore, delivered globally.</p>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/923254723041" class="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:naqeeburrehman001@gmail.com" class="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white mb-8 uppercase text-xs tracking-widest">Explore</h5>
+                    <ul class="space-y-4 text-slate-500 text-sm font-semibold">
+                        <li><a onclick="showPage('services')" class="hover:text-white cursor-pointer transition">Services</a></li>
+                        <li><a onclick="showPage('why-us')" class="hover:text-white cursor-pointer transition">The Advantage</a></li>
+                        <li><a onclick="showPage('blogs')" class="hover:text-white cursor-pointer transition">Case Studies</a></li>
+                        <li><a onclick="showPage('privacy')" class="hover:text-white cursor-pointer transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white mb-8 uppercase text-xs tracking-widest">Connect</h5>
+                    <ul class="space-y-4 text-slate-500 text-sm font-semibold">
+                        <li>Phone: 03254723041</li>
+                        <li>Email: naqeeburrehman001@gmail.com</li>
+                        <li class="pt-4"><span class="px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-[10px] font-black uppercase tracking-tighter">Availability: Open for Projects</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-900/50 pt-10 text-center">
+                <p class="text-slate-600 text-xs font-bold uppercase tracking-widest">&copy; 2026 Naqeeb Dev Agency. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation Logic
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            const target = document.getElementById(pageId);
+            if(target) {
+                target.classList.add('active');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        function toggleMobile() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        }
+    </script>
+</body>
+</html>
