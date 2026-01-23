@@ -18,7 +18,7 @@
         }
 
         .glass-header {
-            background: rgb(255, 220, 66);
+            background: rgb(1, 141, 215);
             backdrop-filter: blur(20px);
             color: rgb(255, 255, 255);
             border-bottom: 1px solid rgba(255, 2, 2, 0.05);
@@ -82,7 +82,7 @@
             transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out;
         }
         .faq-item.active .faq-answer {
-            max-height: 500px; /* Increased for more content if needed */
+            max-height: 500px;
             opacity: 1;
             padding-top: 1rem;
         }
@@ -93,7 +93,7 @@
             transform: rotate(180deg);
         }
         .faq-item:hover img {
-            transform: scale(1.05) rotate(2deg); /* Enhanced hover animation */
+            transform: scale(1.05) rotate(2deg);
             transition: transform 0.5s ease-in-out;
         }
        
@@ -109,7 +109,7 @@
                 <span class="text-xl font-extrabold tracking-tighter uppercase">Naqeeb Dev</span>
             </div>
             
-            <nav class="hidden xl:flex items-center gap-8 text-sm font-bold text-slate-400 uppercase tracking-widest">
+            <nav class="hidden xl:flex items-center gap-8 text-sm font-bold text-white uppercase tracking-widest">
                 <a href="javascript:void(0)" onclick="showPage('services')" class="nav-link hover:text-white" data-page="services">Services</a>
                 <a href="javascript:void(0)" onclick="showPage('why-us')" class="nav-link hover:text-white" data-page="why-us">Why Us</a>
                 <a href="javascript:void(0)" onclick="showPage('about')" class="nav-link hover:text-white" data-page="about">About</a>
@@ -143,7 +143,7 @@
                     <div class="p-12 md:p-20">
                         <div class="relative z-10">
                             <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Elevate Your Business with <span class="gradient-text">Expert Digital Solutions</span></h1>
-                            <p class="text-slate-300 text-lg md:text-xl max-w-3xl mb-8 leading-relaxed">From cutting-edge web development to strategic SEO and marketing, we craft tailored solutions that drive growth and innovation.</p>
+                            <p class="text-white text-lg md:text-xl max-w-3xl mb-8 leading-relaxed">From cutting-edge web development to strategic SEO and marketing, we craft tailored solutions that drive growth and innovation.</p>
                             <button onclick="window.open('https://wa.me/923254723041')" class="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-500 transition shadow-lg shadow-blue-500/20 text-lg font-bold">Start Your Project Today</button>
                         </div>
                     </div>
@@ -153,9 +153,74 @@
                     </div>
                 </div>
 
+                <!-- What is SEO Section -->
+                <div class="bg-white text-black p-8 rounded-xl grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <!-- Left: Text Content -->
+                    <div>
+                        <h2 class="text-4xl font-black mb-8">What is SEO</h2>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Search engine optimization (SEO) is a powerful and popular form of website promotion, and a technique that can drive large amounts of customer and market interest to your website. This is implemented by obtaining and maintaining top rankings in all different search engines like Bing, Google, Yahoo, Yandex.</p>
+                        <p class="text-gray-700 leading-relaxed">SEO includes keyword research and stuffing, competitor analysis and SEO strategy, website SEO audit, link building, copywriting, meta tag optimization, user experience improvement, XML sitemaps, status code monitoring, It includes various tasks such as validating code. These techniques lead to stronger SERP results, increased search rankings and more targeted organic traffic.</p>
+                    </div>
+
+                    <!-- Right: Venn Diagram (styled to match image colors and gradients) -->
+                    <div class="relative flex justify-center md:justify-end">
+                        <div class="relative w-[300px] h-[300px] md:w-[360px] md:h-[360px]">
+                            <!-- Center SEO -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white rounded-full flex items-center justify-center z-20 shadow-2xl">
+                                <div class="text-center">
+                                    <div class="font-black text-4xl text-slate-900">SEO</div>
+                                </div>
+                            </div>
+
+                            <!-- On-page Optimization (top, light purple gradient) -->
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-44 h-44 md:w-52 md:h-52 rounded-full opacity-80 flex items-center justify-center text-black font-semibold text-sm md:text-base" style="background: linear-gradient(135deg, #f3e8ff, #a78bfa);">
+                                <div class="text-center">
+                                    <div>On-page</div>
+                                    <div>Optimization</div>
+                                </div>
+                            </div>
+
+                            <!-- Off-page Optimization (bottom left, green gradient) -->
+                            <div class="absolute bottom-0 left-0 w-44 h-44 md:w-52 md:h-52 rounded-full opacity-80 flex items-center justify-center text-black font-semibold text-sm md:text-base" style="background: linear-gradient(135deg, #d1fae5, #059669);">
+                                <div class="text-center">
+                                    <div>Off-page</div>
+                                    <div>Optimization</div>
+                                </div>
+                            </div>
+
+                            <!-- Strategy and Competitor Analysis (bottom right, orange to purple gradient) -->
+                            <div class="absolute bottom-0 right-0 w-44 h-44 md:w-52 md:h-52 rounded-full opacity-80 flex items-center justify-center text-black font-semibold text-sm md:text-base" style="background: linear-gradient(135deg, #fed7e2, #ec4899);">
+                                <div class="text-center">
+                                    <div>Strategy and</div>
+                                    <div>Competitor</div>
+                                    <div>Analysis</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New How Much SEO Services Section (matched to image) -->
+                <div class="bg-white text-black p-8 rounded-xl mb-20">
+                    <h2 class="text-4xl font-black text-center mb-4">How Much SEO Services in the Pakistan?</h2>
+                    <p class="text-gray-600 text-center text-sm mb-12">Prices for our SEO services depends on many factors, such as competition, amount of keywords, age & quality of the website</p>
+                    <div class="grid md:grid-cols-2 gap-12 items-start">
+                        <div>
+                            <img src="https://thumbs.dreamstime.com/z/digital-marketing-dashboard-displaying-seo-strategies-analytics-laptop-screen-429578973.jpg" alt="SEO Dashboard on Laptop" class="w-full rounded-lg shadow-md">
+                        </div>
+                        <div class="space-y-4 text-gray-700">
+                            <p>We are here to provide a qualified SEO Guru team ready to promote your website at any time.Each project has a project manager, analyst, SEO expert, copywriter and PR manager , Link Managers, Designers, Coders, Coders and a dedicated Account Manager. Our employees have years of experience in the field of SEO and a high level of expertise in the world of online marketing.</p>
+                            <p>Of course, you can hire a specialist and pay them to do the entire project, but they can never give you the same amount of physical and mental work as an SEO company.</p>
+                            <p>We create a strategy of systematic work for each client's proposal and promise monthly updates and reports from Google so that we can track the website's location.</p>
+                            <p>Also, we have a unique plan: pay after results. You only pay after you've earned a position on the first page of search engines.</p>
+                            <p class="text-green-600">If you want to learn Search Engine Optimization you can try our SEO GURU training</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-center max-w-3xl mx-auto mb-20">
                     <h1 class="text-5xl lg:text-7xl font-black mb-8">Our <span class="gradient-text">Core Capabilities</span></h1>
-                    <p class="text-slate-400 text-lg leading-relaxed">We deliver high-end digital solutions by combining deep technical expertise with business intelligence. We don't just build websites; we build revenue engines.</p>
+                    <p class="text-white text-lg leading-relaxed">We deliver high-end digital solutions by combining deep technical expertise with business intelligence. We don't just build websites; we build revenue engines.</p>
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-12 mb-20">
@@ -228,8 +293,7 @@
                     <div class="service-card p-12 rounded-3xl shadow-xl">
                         <div class="w-16 h-16 bg-emerald-600/10 rounded-2xl flex items-center justify-center text-3xl text-emerald-500 mb-8"><i class="fas fa-map-marker-alt"></i></div>
                         <h3 class="text-3xl font-black mb-6">Local SEO</h3>
-                        <p class="text-slate-400 mb-8 leading-relaxed">Local SEO
-Dominating local search results. We optimize your Google Business Profile, manage local citations, and drive reviews to capture nearby traffic.</p>
+                        <p class="text-slate-400 mb-8 leading-relaxed">Dominating local search results. We optimize your Google Business Profile, manage local citations, and drive reviews to capture nearby traffic.</p>
                         <ul class="space-y-4 text-sm font-semibold text-slate-300 mb-8">
                             <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Shopify 2.0 Theme Customization</li>
                             <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Custom Product Filtering & Logic</li>
@@ -420,66 +484,6 @@ Dominating local search results. We optimize your Google Business Profile, manag
                             </div>
                         </div>
                     </div>
-
-                    <!-- Blogs added  -->
-                    <div class="faq-item bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-md transition hover:shadow-lg" onclick="toggleFaq(this)">
-                        <div class="aspect-video rounded-3xl overflow-hidden mb-6 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition">
-                        </div>
-                        <div class="flex justify-between items-center mb-4">
-                            <div>
-                                <p class="text-blue-500 text-xs font-bold uppercase tracking-widest mb-2">Tech Trends</p>
-                                <h3 class="text-2xl font-bold">Why Serverless Architecture is the Future of SaaS</h3>
-                            </div>
-                            <i class="faq-toggle fas fa-chevron-down text-slate-400"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-slate-500 text-sm mb-6 leading-relaxed">Exploring how lambda functions and cloud computing are reducing costs for startup founders. Serverless architecture allows developers to build and run applications without managing servers. This means you can focus on writing code while the cloud provider handles the infrastructure. Benefits include automatic scaling, reduced operational costs, and faster time to market. However, it's important to consider vendor lock-in and cold start issues. In this blog, we dive deep into real-world examples, such as how companies like Netflix and Coca-Cola use serverless to handle massive loads. We'll also cover best practices for migrating from traditional servers to serverless, including choosing the right provider (AWS Lambda, Google Cloud Functions, or Azure Functions) and optimizing your functions for performance.</p>
-                            <div class="flex items-center gap-3">
-                                <img src="https://i.pravatar.cc/100?img=11" class="w-8 h-8 rounded-full">
-                                <span class="text-xs text-slate-400">Naqeeb • 5 Min Read</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="faq-item bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-md transition hover:shadow-lg" onclick="toggleFaq(this)">
-                        <div class="aspect-video rounded-3xl overflow-hidden mb-6 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition">
-                        </div>
-                        <div class="flex justify-between items-center mb-4">
-                            <div>
-                                <p class="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-2">E-commerce</p>
-                                <h3 class="text-2xl font-bold">Scaling Shopify: From $0 to $1M in 12 Months</h3>
-                            </div>
-                            <i class="faq-toggle fas fa-chevron-down text-slate-400"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-slate-500 text-sm mb-6 leading-relaxed">A strategic look into backend optimizations that support high-volume flash sales. Shopify is a powerful platform for e-commerce, but scaling it requires careful planning. Start with theme optimization to ensure fast load times, integrate apps for inventory management, and use Shopify Plus for enterprise features. In this post, we share case studies of stores that grew rapidly by leveraging email marketing, SEO, and social media integrations. Key strategies include A/B testing product pages, implementing upsell funnels, and using data analytics to predict trends. We'll also discuss common pitfalls like over-reliance on third-party apps and how to mitigate them with custom code. By the end, you'll have a roadmap to take your Shopify store from startup to seven-figure revenue.</p>
-                            <div class="flex items-center gap-3">
-                                <img src="https://i.pravatar.cc/100?img=33" class="w-8 h-8 rounded-full">
-                                <span class="text-xs text-slate-400">Hamza • 8 Min Read</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="faq-item bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-md transition hover:shadow-lg" onclick="toggleFaq(this)">
-                        <div class="aspect-video rounded-3xl overflow-hidden mb-6 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition">
-                        </div>
-                        <div class="flex justify-between items-center mb-4">
-                            <div>
-                                <p class="text-purple-500 text-xs font-bold uppercase tracking-widest mb-2">Agency Life</p>
-                                <h3 class="text-2xl font-bold">Bridging the Gap: Remote Development Success</h3>
-                            </div>
-                            <i class="faq-toggle fas fa-chevron-down text-slate-400"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p class="text-slate-500 text-sm mb-6 leading-relaxed">How we manage complex projects across 5 different timezones with 100% accuracy. Remote work has become the norm, but it comes with challenges like communication barriers and time differences. At Naqeeb Dev, we use tools like Slack, Trello, and Zoom to keep everyone aligned. This blog explores our agile methodology, daily stand-ups, and asynchronous updates that ensure projects stay on track. We'll share tips on building team culture remotely, handling client feedback loops, and using version control systems like Git for seamless collaboration. Real examples from our projects show how we delivered a major SaaS app on time despite team members in Asia, Europe, and the US. Learn how to implement these strategies in your own team for better productivity and work-life balance.</p>
-                            <div class="flex items-center gap-3">
-                                <img src="https://i.pravatar.cc/100?img=11" class="w-8 h-8 rounded-full">
-                                <span class="text-xs text-slate-400">Ayesha • 4 Min Read</span>
-                            </div>
-                        </div>
-                    </div>
-
 
                     <!-- Blogs added  -->
                     <div class="faq-item bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-md transition hover:shadow-lg" onclick="toggleFaq(this)">
